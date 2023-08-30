@@ -10,8 +10,8 @@ const bluesound = new Audio();
 
 redsound.src='./sounds/boton1.mp3';
 bluesound.src='./sounds/boton2.mp3';
-yellowsound.src='/sounds/boton4.mp3';
-greensound.src='/sounds/boton3.mp3';
+yellowsound.src='/sounds/boton2.mp3';
+greensound.src='/sounds/boton2.mp3';
 
 
 redbutton.addEventListener('click', ()=> {
