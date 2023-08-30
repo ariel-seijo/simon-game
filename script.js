@@ -8,7 +8,7 @@ const greensound = new Audio();
 const yellowsound = new Audio();
 const bluesound = new Audio();
 
-redsound.src='./sounds/boton1.mp3';
+redsound.src='./sounds/boton2.mp3';
 bluesound.src='./sounds/boton2.mp3';
 yellowsound.src='/sounds/boton2.mp3';
 greensound.src='/sounds/boton2.mp3';
