@@ -24,3 +24,5 @@ yellowbutton.addEventListener('click', ()=> {
     yellowsound.play()
 });
 
+let a = 'xd';
+
