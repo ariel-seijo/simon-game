@@ -28,10 +28,10 @@ comenzar.addEventListener('click', ()=>{
     }
 })
 
-const redsound = new Audio('./sounds/boton1.mp3');
-const greensound = new Audio('/sounds/boton4.mp3');
-const yellowsound = new Audio('/sounds/boton3.mp3');
-const bluesound = new Audio('./sounds/boton2.mp3');
+const redsound = new Audio('boton1.mp3');
+const greensound = new Audio('boton4.mp3');
+const yellowsound = new Audio('boton3.mp3');
+const bluesound = new Audio('boton2.mp3');
 
 let a = 'xd';
 
