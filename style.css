@@ -28,24 +28,30 @@ body {
 }
 
 #quarter-circle-1 {
-margin-left: 47%;
-margin-bottom: 47%;
-border-top-right-radius: 100%;
-background-color: rgb(201,27,28);
+    margin-left: 47%;
+    margin-bottom: 47%;
+    border-top-right-radius: 100%;
+    background-color: red;
+    opacity: 0.6;
+    transition: opacity 200ms;
 }
 
 #quarter-circle-2 {
     margin-right: 47%;
     margin-bottom: 47%;
     border-top-left-radius: 100%;
-    background-color: rgb(1, 156, 47);
+    background-color: green;
+    opacity: 0.6;
+    transition: opacity 200ms;
 }
 
 #quarter-circle-3 {
     margin-right: 47%;
     margin-top: 47%;
     border-bottom-left-radius: 100%;
-    background-color: rgb(218,189,25);
+    background-color: yellow;
+    opacity: 0.6;
+    transition: opacity 200ms;
 }
 
 #quarter-circle-4 {
@@ -53,6 +59,8 @@ background-color: rgb(201,27,28);
     margin-top: 47%;
     border-bottom-right-radius: 100%;
     background-color: rgb(0,119,188);
+    opacity: 0.6;
+    transition: opacity 200ms;
 }
 
 #small-circle {
