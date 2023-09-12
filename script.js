@@ -3,6 +3,9 @@ const greenbutton = document.querySelector('#quarter-circle-2');
 const yellowbutton = document.querySelector('#quarter-circle-3');
 const bluebutton = document.querySelector('#quarter-circle-4');
 const iniciarboton = document.querySelector('button');
+const puntaje = document.querySelector('p');
+const mensaje = document.querySelector('h1');
+const textorecord = document.querySelector('#record');
 
 const redsound = new Audio('redsound.wav');
 const greensound = new Audio('greensound.wav');
@@ -12,6 +15,8 @@ const losesound = new Audio('lose.wav');
 
 let patronMaquina = [];
 let patronJugador = [];
+let rondas = -1;
+let record = 0;
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -25,6 +30,7 @@ iniciarboton.addEventListener('click', ()=> {
 quitarPermisoInput();
 
 function reiniciar() {
+    rondas = -1;
     patronMaquina = [];
     patronJugador = [];
 }
@@ -36,14 +42,19 @@ function obtenerBotonAleatorio() {
 }
 
 function ronda() {
-    console.log('Turno de la máquina');
+    mensaje.textContent = 'Turno de la máquina'
+    iniciarboton.disabled = true;
+    rondas += 1;
+    if (rondas > record) {
+        record = rondas;
+    }
+    puntaje.textContent = rondas.toString();
     quitarPermisoInput();
 
     const $nuevoBotton = obtenerBotonAleatorio();
     patronMaquina.push($nuevoBotton);
-    console.log(patronMaquina)
 
-    const RETRASO_TURNO_JUGADOR = ((patronMaquina.lenght + 1) * 1000);
+    const RETRASO_TURNO_JUGADOR = ((patronMaquina.length + 1) * 500);
 
     patronMaquina.forEach(function($boton, index) {
         const RETRASO_MS = (index + 1) * 500;
@@ -53,7 +64,7 @@ function ronda() {
     })
 
     setTimeout(function() {
-        console.log('es tu turno');
+        mensaje.textContent = 'Tu turno';
         darPermisoInput(); 
     }, RETRASO_TURNO_JUGADOR);
 
@@ -120,7 +131,12 @@ function encenderBoton($boton) {
 function perder() {
     quitarPermisoInput();
     setTimeout(() => {
+        mensaje.textContent = '¡Oh no! Perdiste :('
+        textorecord.textContent = `Tu récord es: ${record}`;
         losesound.play();    
     }, 500);
-    console.log('¡Perdiste!');
+    setTimeout(() => {
+        iniciarboton.textContent = 'REINICIAR';
+        iniciarboton.disabled = false;
+    }, 1000);
 }
